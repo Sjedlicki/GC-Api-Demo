@@ -1,0 +1,62 @@
+﻿@model GrandCircus
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Grand Circus</h1>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Organization)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ceo.FirstName)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.Ceo.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Ceo.LastName)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rooms)
+        </th>
+    </tr>
+    @foreach (var room in Model.Rooms)
+    {
+        <tr>
+            <td></td>
+            <td>
+                @Html.DisplayFor(modelItem => room.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => room.Level)
+            </td>
+        </tr>
+    }
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Languages)
+        </th>
+        @foreach (var item in Model.Languages)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Creator)
+            </td>
+        }
+    </tr>
+</table>

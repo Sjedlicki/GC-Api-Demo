@@ -1,0 +1,49 @@
+﻿@model HallOfFame
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Complete</h1>
+
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Innovation</th>
+        <th>Year</th>
+    </tr>
+
+    @foreach(var person in Model.Complete)
+    {
+        <tr>
+            <td>@person.FirstName</td>
+            <td>@person.LastName</td>
+            <td>@person.Innovation</td>
+            <td>@person.Year</td>
+        </tr>
+    }
+</table>
+
+<hr />
+<h1>Tiny</h1>
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Invented</th>
+        <th>Year</th>
+    </tr>
+
+    @foreach(var person in Model.Tiny)
+    {
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Invented</td>
+            <td>@person.Year</td>
+        </tr>
+    }
+</table>
